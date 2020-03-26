@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Opt, OptInput, Message, Cta, Label } from './styledComps/styles';
-import client from './firebase';
+import {
+  Opt,
+  OptInput,
+  Message,
+  Cta,
+  Label,
+  Close
+} from './styledComps/styles';
+import client, { clientGet } from './firebase';
 import * as yup from 'yup';
+// import { addHide } from '../hide';
 // import validateChange from './functions/validateChange';
 // import { clientSchema } from './functions/clientSchema';
 const clientSchema = yup.object().shape({
@@ -21,6 +29,7 @@ const clientSchema = yup.object().shape({
       'This field is for any additional information about what you need done!'
     )
 });
+
 export default function OptForm(props) {
   // To disable button when form isn't complete
   const [buttonDis, setButtonDis] = useState(true);
@@ -30,14 +39,24 @@ export default function OptForm(props) {
 
   // To retrieve user information
   const [clientInfo, setClientInfo] = useState({
+    id: '',
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+  const reName = clientInfo.name.split(' ');
+  const newName = reName.reverse().join('-');
+  const newId = `${newName}-${Date.now()}`;
+  // Trying to set up an ID for Firebase:
+
+  console.log(newId);
+
+  // const id = `${}`
 
   // Error Management
   const [errors, setErrors] = useState({
+    id: '',
     name: '',
     email: '',
     phone: '',
@@ -58,11 +77,12 @@ export default function OptForm(props) {
     // console.log(
     //   `Name: ${clientInfo.name}, E-mail: ${clientInfo.email}, Phone: ${clientInfo.phone}, Message: ${clientInfo.message}`
     // );
+    const id = clientInfo.id;
     const name = clientInfo.name;
     const email = clientInfo.email;
     const phone = clientInfo.phone;
     const message = clientInfo.message;
-    client(name, email, phone, message);
+    client(id, name, email, phone, message);
   };
 
   // Validate the Changes:
@@ -89,6 +109,7 @@ export default function OptForm(props) {
     e.persist();
     const newClientData = {
       ...clientInfo,
+      id: newId,
       [e.target.name]: e.target.value
     };
     validateChange(e);
@@ -97,7 +118,8 @@ export default function OptForm(props) {
 
   // UI of App
   return (
-    <Opt onSubmit={formSubmit}>
+    <Opt onSubmit={formSubmit} style={props.displayAnim} className='form hide'>
+      <Close onClick={props.onHide}>Close</Close>
       <Label htmlFor='name'>
         <OptInput
           name='name'

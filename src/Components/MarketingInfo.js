@@ -1,7 +1,7 @@
 import React from 'react';
 import { MarketingInfoBody, Info, Cta } from './styledComps/styles';
-
-const MarketingInfo = () => {
+import { removeHide } from '../hide';
+const MarketingInfo = props => {
   return (
     <MarketingInfoBody className='genInfo'>
       <Info>
@@ -21,7 +21,7 @@ const MarketingInfo = () => {
         would be more then happy to assist you as well just let me know if this
         is something you are interested in !
       </Info>
-      <Cta>Check it out!</Cta>
+      <Cta onClick={props.onShow}>Check it out!</Cta>
     </MarketingInfoBody>
   );
 };

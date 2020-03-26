@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+#root .hide {
+  display: none;
+  transition: display 1s ease-out;
+}
+.appwrap {
+  z-index: -1;
+}

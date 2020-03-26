@@ -1,11 +1,13 @@
 import React from 'react';
 import { NavWrap, NavItem } from './styledComps/styles';
-
-const Nav = () => {
+// import { removeHide } from '../hide';
+const Nav = props => {
   return (
     <NavWrap className='navWrapper'>
       <NavItem href='#'>About</NavItem>
-      <NavItem href='#'>Contact</NavItem>
+      <NavItem href='#' onClick={props.onShow}>
+        Contact
+      </NavItem>
     </NavWrap>
   );
 };

@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-
+import axios from 'axios';
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
@@ -11,16 +11,17 @@ const config = {
 };
 
 firebase.initializeApp(config);
-function client(name, email, phone, message) {
+function client(id, name, email, phone, message) {
   const clientRef = firebase.database().ref('clients');
   const newClientRef = clientRef.push();
 
   newClientRef.set({
+    id: id,
     name: name,
     email: email,
     phone: phone,
     message: message
   });
 }
-
+// export const clientGet = firebase.database()
 export default client;

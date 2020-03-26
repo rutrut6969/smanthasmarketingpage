@@ -89,6 +89,8 @@ export const Opt = styled.form`
   justify-content: space-evenly;
   align-items: center;
   z-index: 2;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgb(211, 211, 211);
 `;
 
 export const OptInput = styled.input`
@@ -98,6 +100,8 @@ export const OptInput = styled.input`
   height: 20px;
   border-radius: 5px;
   background-color: transparent;
+  font-size: 16px;
+  margin: 2%;
 
   &:-webkit-autofill {
     background-color: transparent;
@@ -120,4 +124,19 @@ export const Label = styled.label`
   align-items: center;
   flex-flow: column wrap;
   width: 100%;
+`;
+export const FormOverlay = styled.div`
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const Close = styled.p`
+  cursor: pointer;
+  &:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  }
 `;
