@@ -82,7 +82,7 @@ export const Opt = styled.form`
   display: flex;
   flex-flow: column;
   width: 35%;
-  height: 30vh;
+  height: 300px;
   background-color: rgba(211, 211, 211, 0.7);
   /* align-self: center; */
   /* justify-self: center; */
@@ -113,4 +113,11 @@ export const Message = styled.textarea`
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
   background-color: transparent;
   border-radius: 5px;
+`;
+export const Label = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  width: 100%;
 `;
