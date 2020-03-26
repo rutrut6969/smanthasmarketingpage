@@ -11,5 +11,16 @@ const config = {
 };
 
 firebase.initializeApp(config);
+function client(name, email, phone, message) {
+  const clientRef = firebase.database().ref('clients');
+  const newClientRef = clientRef.push();
 
-export default firebase;
+  newClientRef.set({
+    name: name,
+    email: email,
+    phone: phone,
+    message: message
+  });
+}
+
+export default client;
