@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 export const NavWrap = styled.section`
   width: 100%;
-  height: 8vh;
+  /* height: 8vh; */
   background-color: rgba(245, 95, 198, 0.69);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.7);
   box-shadow: 2px 2px 15px rgba(117, 26, 89, 0.77);
+  padding-bottom: 2px;
+  position: fixed;
 `;
 
 export const NavItem = styled.a`
@@ -32,8 +34,8 @@ export const NavItem = styled.a`
 
 export const AppWrap = styled.div`
   background-color: rgba(247, 49, 186, 0.7);
-  height: 100vh;
-  z-index: -1;
+  /* height: 100vh; */
+  /* z-index: -1; */
   width: 100%;
   padding-top: 4%;
   padding-left: 2%;
@@ -42,6 +44,7 @@ export const AppWrap = styled.div`
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  /* padding: 5%; */
 `;
 export const MarketingInfoBody = styled.section`
   display: flex;
@@ -64,7 +67,7 @@ export const Info = styled.p`
 export const Cta = styled.button`
   background-color: rgba(245, 95, 198, 0.69);
   height: 30px;
-  width: 100px;
+  /* width: 100px; */
   border: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 10px rgba(117, 26, 89, 0.77);
   border-radius: 5px;
@@ -83,7 +86,7 @@ export const Opt = styled.form`
   flex-flow: column;
   width: 35%;
   height: 300px;
-  background-color: rgba(211, 211, 211, 0.7);
+  background-color: rgba(211, 211, 211, 0.9);
   /* align-self: center; */
   /* justify-self: center; */
   justify-content: space-evenly;
@@ -91,6 +94,7 @@ export const Opt = styled.form`
   z-index: 2;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgb(211, 211, 211);
+  position: fixed;
 `;
 
 export const OptInput = styled.input`
@@ -126,10 +130,10 @@ export const Label = styled.label`
   width: 100%;
 `;
 export const FormOverlay = styled.div`
-  z-index: 1;
+  /* z-index: 1; */
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  /* background-color: rgba(0, 0, 0, 2); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,4 +143,66 @@ export const Close = styled.p`
   &:hover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.7);
   }
+`;
+
+export const AboutInfo = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 500px;
+  width: 40%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px dashed rgba(211, 211, 211, 0.8);
+  flex-flow: column wrap;
+  margin-bottom: 5%;
+`;
+export const AboutWrap = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  width: 98%;
+  justify-content: space-evenly;
+`;
+export const H1 = styled.h1`
+  text-align: center;
+  color: white;
+  /* display: block; */
+  width: 100%;
+`;
+export const H3 = styled.h3`
+  text-align: center;
+  color: white;
+`;
+export const VidWrap = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  box-sizing: border-box;
+`;
+export const MarketWrap = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+`;
+export const IntroWrap = styled.section`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+export const ImageWrap = styled.div`
+  display: flex;
+  width: 40%;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+`;
+export const Image = styled.img`
+  width: 30%;
+  height: 100px;
 `;

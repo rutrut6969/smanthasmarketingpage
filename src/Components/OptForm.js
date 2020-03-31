@@ -9,7 +9,7 @@ import {
 } from './styledComps/styles';
 import client, { clientGet } from './firebase';
 import * as yup from 'yup';
-// import { addHide } from '../hide';
+import { addHide, name } from './functions/styleselectors';
 // import validateChange from './functions/validateChange';
 // import { clientSchema } from './functions/clientSchema';
 const clientSchema = yup.object().shape({
@@ -50,7 +50,7 @@ export default function OptForm(props) {
   const newId = `${newName}-${Date.now()}`;
   // Trying to set up an ID for Firebase:
 
-  console.log(newId);
+  // console.log(newId);
 
   // const id = `${}`
 
@@ -83,6 +83,7 @@ export default function OptForm(props) {
     const phone = clientInfo.phone;
     const message = clientInfo.message;
     client(id, name, email, phone, message);
+    window.location.replace('https://www.facebook.com/sushiimamamodel');
   };
 
   // Validate the Changes:
@@ -118,45 +119,55 @@ export default function OptForm(props) {
 
   // UI of App
   return (
-    <Opt onSubmit={formSubmit} style={props.displayAnim} className='form hide'>
-      <Close onClick={props.onHide}>Close</Close>
-      <Label htmlFor='name'>
-        <OptInput
-          name='name'
-          id='name'
-          placeholder='First & Last Name:'
-          onChange={inputChange}
-        />
-        {errors.name.length > 0 ? console.log(errors.name) : null}
-      </Label>
-      <Label htmlFor='email'>
-        <OptInput
-          name='email'
-          id='email'
-          placeholder='E-Mail: '
-          onChange={inputChange}
-        />
-      </Label>
-      <Label htmlFor='phone'>
-        <OptInput
-          name='phone'
-          id='phone'
-          placeholder='Phone#:'
-          onChange={inputChange}
-        />
-      </Label>
-      <Label htmlFor='message'>
-        <Message
-          id='message'
-          name='message'
-          placeholder='Message:'
-          type='textarea'
-          onChange={inputChange}
-        />
-      </Label>
-      <Cta type='submit' disabled={buttonDis}>
-        Submit
-      </Cta>
-    </Opt>
+    <>
+      <Opt
+        onSubmit={formSubmit}
+        style={props.displayAnim}
+        className='form hide'
+      >
+        <Close onClick={props.onHide}>Close</Close>
+        <Label htmlFor='name'>
+          <OptInput
+            name='name'
+            id='name'
+            placeholder='First & Last Name:'
+            onChange={inputChange}
+            className='input'
+          />
+          {errors.name.length > 0 ? console.log(errors.name) : null}
+        </Label>
+        <Label htmlFor='email'>
+          <OptInput
+            name='email'
+            id='email'
+            placeholder='E-Mail: '
+            onChange={inputChange}
+            className='input'
+          />
+        </Label>
+        <Label htmlFor='phone'>
+          <OptInput
+            name='phone'
+            id='phone'
+            placeholder='Phone#:'
+            onChange={inputChange}
+            className='input'
+          />
+        </Label>
+        <Label htmlFor='message'>
+          <Message
+            id='message'
+            name='message'
+            placeholder='Message:'
+            type='textarea'
+            onChange={inputChange}
+            className='input message'
+          />
+        </Label>
+        <Cta type='submit' disabled={buttonDis}>
+          Submit
+        </Cta>
+      </Opt>
+    </>
   );
 }

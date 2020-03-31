@@ -6,12 +6,127 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./Components/Assets/SamanthaProfessional.jpg');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: none;
+  background-attachment: fixed;
+
+  background-size: 100% 175vh;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+}
+
+#root .navItem {
+  text-decoration: none;
+  color: black;
+  width: 15%;
+  text-align: center;
+  padding: 1%;
+  font-weight: bold;
+}
+#root .navItem:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 10px;
+  transition: 0.2s ease-in;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#root .img {
+  background-image: url('./Components/Assets/datapoint1.jpg');
+  width: 40%;
+  height: 600px;
+  background-size: 100% 100%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  border: 1px dashed rgba(0, 0, 0, 0.5);
+}
+#root .facebook {
+  text-decoration: none;
+  color: black;
+}
+#root .facebook:hover {
+  text-decoration: underline;
+  color: white;
+  text-transform: uppercase;
+}
+#root .img2 {
+  background-image: url('./Components/Assets/bebold.jpg');
+  width: 40%;
+  height: 500px;
+  background-size: 100% 100%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  border: 1px dashed rgba(0, 0, 0, 0.5);
+}
+#root .form {
+  width: 70%;
+  height: 400px;
+  z-index: 200;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+#root .form .input {
+  width: 50%;
+}
+#root .form .message {
+  height: 100px;
+}
+@media (max-width: 980px) {
+  #root .marketWrap {
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+  }
+  #root .genInfo {
+    width: 85%;
+  }
+  #root .img {
+    width: 60%;
+  }
+  #root .marketInfo {
+    width: 85%;
+  }
+  #root .switch {
+    display: flex;
+    flex-flow: column-reverse wrap;
+  }
+  #root .img2 {
+    width: 60%;
+  }
+  #root .aboutWrap {
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  #root .aboutInfo {
+    width: 85%;
+  }
+  #root .vidWrap {
+    width: 85%;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+  #root .keepPos {
+    margin-top: -49.7%;
+  }
+
+  .video {
+    max-wdith: 85%;
+    width: 85%;
+  }
+}
+@media (max-width: 750px) {
+  /* .vidWrap {
+    width: 50%;
+  } */
+  .video {
+    width: 85%;
+    max-width: ;
+  }
+}
+.video {
+  max-width: 400px;
 }
